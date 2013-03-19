@@ -1,0 +1,20 @@
+SimpleJavaApp:
+  Type: Generic
+  RuntimeVars:
+    - CLASSPATH: "$(find lib/ -name '*.jar' | xargs echo | tr ' ' ':')"
+    - PORT: "8080"
+    - DATE: "`date -u`"
+    - JAVA_HOME: "/usr/local/jre"
+  ExecCommand: "exec $JAVA_HOME/bin/java -cp $CLASSPATH $RUNTIME_ARGS $ARGS"
+  RunCommands:
+    - 'echo "$DATE Starting App SimpleJavaApi"'
+  RuntimeArgs:
+    - "-Duser.timezone=UTC"
+    - "-Xmx128M"
+    - "-Xms128M"
+  Args:
+    - "com.example.app.SimpleJavaApp"
+    - "$PORT"
+  PkgInclude:
+    - ["target/*.jar", "lib/"]
+    - ["lib/*.jar", "lib/"]
