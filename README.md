@@ -19,8 +19,8 @@ You can deploy this app with the following easy steps:
  - **Clone this repo**: <br/>
     ``git clone git://github.com/distelli/SimpleJavaApp.git``
 
-  - **Update the distelli-spec.yml** <br/>
-    In the distelli-spec.yml file, change the values for JAVA_HOME (in the RuntimeVars sections)to point to the directory where rvm is installed on your server.
+ - **Update the distelli-spec.yml** <br/>
+     In the distelli-spec.yml file, change the values for JAVA_HOME (in the RuntimeVars sections)to point to the directory where rvm is installed on your server.
 
  - **Push the code to your S3 bucket using the Distelli CLI** <br/>
    ``distelli push -m "My first deployment"`` <br/>
