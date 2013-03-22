@@ -4,10 +4,10 @@ SimpleJavaApp:
     - CLASSPATH: "$(find lib/ -name '*.jar' | xargs echo | tr ' ' ':')"
     - PORT: "8080"
     - DATE: "`date -u`"
-    - JAVA_HOME: "/usr/local/jre"
+    - JAVA_HOME: "/path/to/jre"
   ExecCommand: "exec $JAVA_HOME/bin/java -cp $CLASSPATH $RUNTIME_ARGS $ARGS"
   RunCommands:
-    - 'echo "$DATE Starting App SimpleJavaApi"'
+    - 'echo "$DATE Starting App SimpleJavaApp"'
   RuntimeArgs:
     - "-Duser.timezone=UTC"
     - "-Xmx128M"
