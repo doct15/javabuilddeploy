@@ -10,7 +10,7 @@ A simple java app with a distelli-spec.yml file that describes how this app shou
 
 ### Prerequisites
 
-This app requires the Java JRE which must be present on the server you're deploying to.
+This app requires the Java JRE which must be present on the server you're deploying to. If the JRE is not present on your server, you can <a href="https://github.com/distelli/DistelliJRE">deploy it using the Distelli platform</a>.
 
 ### Deploying
 
@@ -20,7 +20,7 @@ You can deploy this app with the following easy steps:
     ``git clone git://github.com/distelli/SimpleJavaApp.git``
 
  - **Update the distelli-spec.yml** <br/>
-     In the distelli-spec.yml file, change the values for JAVA_HOME (in the RuntimeVars sections)to point to the directory where the JRE is installed on your server.
+     In the distelli-spec.yml file, change the values for JAVA_HOME (in the RuntimeVars sections) to point to the directory where the JRE is installed on your server. If you <a href="https://github.com/distelli/DistelliJRE">deployed the JRE using distelli</a>, set the JAVA_HOME to /distelli/jre1.7.0_17.
 
  - **Push the code to your S3 bucket using the Distelli CLI** <br/>
    ``distelli push -m "My first deployment"`` <br/>
