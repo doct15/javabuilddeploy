@@ -4,10 +4,9 @@ SimpleJavaApp
 A simple java app with a distelli-spec.yml file that describes how this app should be deployed using the Distelli platform.
 
 ### Before you deploy
-
- - Setup the Distelli Agent on the server that you want to deploy this app to
- - Setup the Distelli CLI on your desktop machine
-
+ - <a href="http://www.distelli.com/docs/setup.html" target="_blank">Setup the Distelli Agent</a> on the server that you want to deploy this app to
+ - <a href="http://www.distelli.com/docs/setup-cli.html" target="_blank">Setup the Distelli CLI</a> on your desktop machine
+ 
 ### Prerequisites
 
 This app requires the Java JRE which must be present on the server you're deploying to.
