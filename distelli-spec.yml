@@ -4,7 +4,7 @@ SimpleJavaApp:
     - CLASSPATH: "$(find lib/ -name '*.jar' | xargs echo | tr ' ' ':')"
     - PORT: "8080"
     - JAVA_HOME: "/distelli/jre1.7.0_17"
-    - JVM_ARGS: "-Duser.timezone=UTC -Xmx128M -Xms128M"
+    - JVM_ARGS: '"-Duser.timezone=UTC -Xmx128M -Xms128M"'
     - ARGS: "$PORT"
   Exec:
     - "exec $JAVA_HOME/bin/java -cp $CLASSPATH $JVM_ARGS com.example.app.SimpleJavaApp $ARGS"
