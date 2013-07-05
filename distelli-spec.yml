@@ -1,5 +1,4 @@
 <username>/SimpleJavaApp:
-  Type: Generic
   Env:
     - CLASSPATH: "$(find lib/ -name '*.jar' | xargs echo | tr ' ' ':')"
     - PORT: "8080"
