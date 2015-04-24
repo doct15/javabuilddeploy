@@ -34,6 +34,6 @@ public class SimpleServlet extends HttpServlet
         int minutes = (int) ((elapsed / (1000*60)) % 60);
         int hours   = (int) ((elapsed / (1000*60*60)) % 24);
 
-        response.getWriter().println("<h1>Hello World</h1><i>Uptime: "+String.format("%02d:%02d:%02d", hours, minutes, seconds));
+        response.getWriter().println("<h1>Hello World from Distelli. You have successfully deployed the Java App.</h1><i>Uptime: "+String.format("%02d:%02d:%02d", hours, minutes, seconds));
     }
 }
