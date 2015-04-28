@@ -1,7 +1,7 @@
 <username>/SimpleJavaApp:
   Env:
     - CLASSPATH: "$(find lib/ -name '*.jar' | xargs echo | tr ' ' ':')"
-    - PORT: "8080"
+    - PORT: "8001"
     - JAVA_HOME: "/$DISTELLI_INSTALLHOME/jre1.8.0_45"
     - JVM_ARGS: '"-Duser.timezone=UTC -Xmx128M -Xms128M"'
     - ARGS: "$PORT"
