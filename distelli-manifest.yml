@@ -1,12 +1,12 @@
 distelli/SimpleJavaApp:
   Env:
     - CLASSPATH: 'target/*:lib/*'
-    - PORT: "8080"
     - JAVA_HOME: "/usr/local/jre"
     - JVM_ARGS: '"-Duser.timezone=UTC -Xmx128M -Xms128M"'
+    - PORT: "8080"
     - ARGS: "$PORT"
   Exec:
     - exec $JAVA_HOME/bin/java -cp $CLASSPATH $JVM_ARGS com.example.app.SimpleJavaApp $ARGS
   PkgInclude:
-    - "target/*.jar"
-    - "lib/*.jar"
+    - target/*.jar
+    - lib/*.jar
