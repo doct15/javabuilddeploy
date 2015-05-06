@@ -1,12 +1,12 @@
-<username>/SimpleJavaApp:
+distelli/SimpleJavaApp:
   Env:
-    - CLASSPATH: "$(find lib/ -name '*.jar' | xargs echo | tr ' ' ':')"
+    - CLASSPATH: 'target/*:lib/*'
     - PORT: "8080"
-    - JAVA_HOME: "/distelli/jre1.7.0_17"
+    - JAVA_HOME: "/usr/local/jre"
     - JVM_ARGS: '"-Duser.timezone=UTC -Xmx128M -Xms128M"'
     - ARGS: "$PORT"
   Exec:
-    - "exec $JAVA_HOME/bin/java -cp $CLASSPATH $JVM_ARGS com.example.app.SimpleJavaApp $ARGS"
+    - exec $JAVA_HOME/bin/java -cp $CLASSPATH $JVM_ARGS com.example.app.SimpleJavaApp $ARGS
   PkgInclude:
-    - ["target/*.jar", "lib/"]
-    - ["lib/*.jar", "lib/"]
+    - "target/*.jar"
+    - "lib/*.jar"
