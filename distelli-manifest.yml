@@ -1,12 +1,27 @@
-distelli/SimpleJavaApp:
+distelli/javabuilddeploy:
+
   Env:
     - CLASSPATH: 'target/*:lib/*'
     - JAVA_HOME: "/usr/local/jre"
     - JVM_ARGS: '"-Duser.timezone=UTC -Xmx128M -Xms128M"'
     - PORT: "8080"
     - ARGS: "$PORT"
+    
+  PreBuild:
+    - echo "Beginning PreBuild"
+    - echo "---set---"
+    - set
+    - echo "making target directory..."
+    - mkdir -p target/classes
+
+  Build:
+    - echo "Beginning Build"
+    - javac -cp $CLASSPATH src/com/exapmle/app/*.java -d target/classes
+    - jar -cf targetSimpleJavaApp.jar -C target/classes/ .
+    
   Exec:
     - exec $JAVA_HOME/bin/java -cp $CLASSPATH $JVM_ARGS com.example.app.SimpleJavaApp $ARGS
+
   PkgInclude:
     - target/*.jar
     - lib/*.jar
