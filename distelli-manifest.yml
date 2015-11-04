@@ -9,14 +9,6 @@ bmcgehee/javabuilddeploy:
     
   PreBuild:
     - echo "Beginning PreBuild"
-    - echo "---set---"
-    - set
-    - echo "---pwd---"
-    - pwd
-    - echo "---ls---"
-    - ls -l
-    - echo "---ls2---"
-    - ls -l src/com/example/app/*.java
     - echo "making target directory..."
     - mkdir -p target/classes
 
@@ -24,11 +16,6 @@ bmcgehee/javabuilddeploy:
     - echo "Beginning Build"
     - javac -cp $CLASSPATH src/com/example/app/*.java -d target/classes
     - jar -cf target/SimpleJavaApp.jar -C target/classes/ .
-    - echo "---ls---"
-    - ls -l
-    - echo "---ls2---"
-    - ls -l target
-    - ls -l target/classes
 
   PreInstall:
     - echo "Beginning PreInstall"
