@@ -24,6 +24,11 @@ bmcgehee/javabuilddeploy:
     - echo "Beginning Build"
     - javac -cp $CLASSPATH src/com/example/app/*.java -d target/classes
     - jar -cf targetSimpleJavaApp.jar -C target/classes/ .
+    - echo "---ls---"
+    - ls -l
+    - echo "---ls2---"
+    - ls -l target
+    - ls -l target/classes
     
   Exec:
     - exec $JAVA_HOME/bin/java -cp $CLASSPATH $JVM_ARGS com.example.app.SimpleJavaApp $ARGS
