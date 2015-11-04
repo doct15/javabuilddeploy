@@ -2,7 +2,7 @@ bmcgehee/javabuilddeploy:
 
   Env:
     - CLASSPATH: 'target/*:lib/*'
-    - JAVA_HOME: "/usr/local/jre"
+    - JAVA_HOME: "/usr/lib/jvm/java-7-openjdk-amd64/jre"
     - JVM_ARGS: '"-Duser.timezone=UTC -Xmx128M -Xms128M"'
     - PORT: "8080"
     - ARGS: "$PORT"
@@ -29,6 +29,11 @@ bmcgehee/javabuilddeploy:
     - echo "---ls2---"
     - ls -l target
     - ls -l target/classes
+
+  PreInstall:
+    - echo "Beginning PreInstall"
+    - sudo apt-get -y update
+    - sudo apt-get -y install default-jre
     
   Exec:
     - exec $JAVA_HOME/bin/java -cp $CLASSPATH $JVM_ARGS com.example.app.SimpleJavaApp $ARGS
