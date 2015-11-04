@@ -25,3 +25,4 @@ bmcgehee/javabuilddeploy:
   PkgInclude:
     - target/*.jar
     - lib/*.jar
+    
