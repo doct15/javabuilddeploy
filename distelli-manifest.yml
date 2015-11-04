@@ -11,6 +11,12 @@ bmcgehee/javabuilddeploy:
     - echo "Beginning PreBuild"
     - echo "---set---"
     - set
+    - echo "---pwd---"
+    - pwd
+    - echo "---ls---"
+    - ls -l
+    - echo "---tree---"
+    - tree
     - echo "making target directory..."
     - mkdir -p target/classes
 
