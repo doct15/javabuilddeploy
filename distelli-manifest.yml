@@ -15,14 +15,14 @@ bmcgehee/javabuilddeploy:
     - pwd
     - echo "---ls---"
     - ls -l
-    - echo "---tree---"
-    - tree
+    - echo "---ls2---"
+    - ls -l src/com/example/app/*.java
     - echo "making target directory..."
     - mkdir -p target/classes
 
   Build:
     - echo "Beginning Build"
-    - javac -cp $CLASSPATH src/com/exapmle/app/*.java -d target/classes
+    - javac -cp $CLASSPATH src/com/example/app/*.java -d target/classes
     - jar -cf targetSimpleJavaApp.jar -C target/classes/ .
     
   Exec:
