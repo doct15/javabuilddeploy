@@ -23,7 +23,7 @@ bmcgehee/javabuilddeploy:
   Build:
     - echo "Beginning Build"
     - javac -cp $CLASSPATH src/com/example/app/*.java -d target/classes
-    - jar -cf targetSimpleJavaApp.jar -C target/classes/ .
+    - jar -cf target/targetSimpleJavaApp.jar -C target/classes/ .
     - echo "---ls---"
     - ls -l
     - echo "---ls2---"
