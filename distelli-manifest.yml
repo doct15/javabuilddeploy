@@ -29,4 +29,4 @@ bmcgehee/javabuilddeploy:
     - target/*.jar
     - lib/*.jar
     
-    
+   
